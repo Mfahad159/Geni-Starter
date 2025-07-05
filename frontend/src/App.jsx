@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PromptForm from "./Components/PromptForm";
 import StartupIdeaCard from "./Components/IdeaCard";
+import FloatingMenu from "./Components/FloatingMenu";
 
 const App = () => {
   const [ideas, setIdeas] = useState([]);
@@ -29,6 +30,7 @@ const App = () => {
         />
       ))}
       </div>
+      <FloatingMenu/>
     </div>
   );
 };
