@@ -17,6 +17,7 @@
     z-index: 1000; /* Ensures it stays on top of other content */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #e0e0e0; /* Light grey for text, to contrast with dark background */
+    transition: all 0.3s ease; /* Smooth transition for all changes */
 }
 
 .header-left {
@@ -29,12 +30,33 @@
     font-weight: bold;
     color: #a07dff; /* A vibrant color for your brand name */
     text-shadow: 0 0 5px rgba(160, 125, 255, 0.5); /* Subtle glow */
+    transition: all 0.3s ease;
+}
+
+/* Scrolled state styles */
+.header-scrolled {
+    padding: 8px 20px;
+    border-radius: 25px;
+    background-color: rgba(30, 30, 30, 0.95);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+.header-scrolled .site-title {
+    font-size: 20px;
 }
 
 .header-middle {
     display: flex;
     flex-direction: row;
     gap: 25px; /* Space between the middle links */
+    transition: all 0.3s ease;
+}
+
+.header-middle-collapsed {
+    gap: 15px;
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
 }
 
 .header-link {
@@ -55,9 +77,15 @@
     transform: translateY(-2px); /* Slight lift effect on hover */
 }
 
-.header-link span { /* Targeted the text inside the link div */
+.header-link-text { /* Targeted the text inside the link div */
     font-size: 14px; /* Slightly larger font size for readability */
     margin-left: 8px; /* Space between icon and text */
+    transition: all 0.3s ease;
+}
+
+.header-link span { /* Backward compatibility */
+    font-size: 14px;
+    margin-left: 8px;
 }
 
 .mid-images {
@@ -71,6 +99,13 @@
 .header-right {
     display: flex;
     align-items: center;
+    transition: all 0.3s ease;
+}
+
+.header-right-collapsed {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
 }
 
 .cta-button {
@@ -103,8 +138,16 @@
         transform: translateX(-50%); /* Keep centered */
     }
 
+    .header-scrolled {
+        padding: 6px 15px;
+    }
+
     .site-title {
         font-size: 22px; /* Slightly smaller font */
+    }
+
+    .header-scrolled .site-title {
+        font-size: 18px;
     }
 
     .header-middle {
@@ -113,6 +156,10 @@
 
     .header-link {
         padding: 7px 12px;
+    }
+
+    .header-link-text {
+        font-size: 13px;
     }
 
     .header-link span {
@@ -145,6 +192,11 @@
         border-radius: 10px;
     }
 
+    .header-scrolled {
+        padding: 4px 10px;
+        border-radius: 15px;
+    }
+
     .header-left {
         /* No specific width needed here, content will dictate */
         justify-content: flex-start; /* Align title to the start */
@@ -153,6 +205,10 @@
 
     .site-title {
         font-size: 18px; /* Smaller font size for title */
+    }
+
+    .header-scrolled .site-title {
+        font-size: 16px;
     }
 
     .header-middle {
@@ -167,6 +223,10 @@
         padding: 5px 8px; /* Adjust padding for smaller links (icon only) */
         width: auto; /* Let width be determined by content */
         justify-content: center; /* Center content within link */
+    }
+
+    .header-link-text {
+        display: none; /* Hide the text, show only icon */
     }
 
     .header-link span {
@@ -187,5 +247,18 @@
         width: auto; /* Make button width fit content */
         font-size: 11px; /* Smaller font for button */
         padding: 6px 12px; /* Smaller padding for button */
+    }
+}
+
+/* Animations */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
     }
 }
