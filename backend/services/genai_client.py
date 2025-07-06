@@ -22,7 +22,7 @@ async def get_ideas(prompt: str):
                 "X-Title": "Idea Generator",
             },
             data=json.dumps({
-                "model": "deepseek/deepseek-r1-distill-qwen-7b",
+                "model": "deepseek/deepseek-r1-0528-qwen3-8b:free",
                 "messages": [
                     {
                         "role": "user",
