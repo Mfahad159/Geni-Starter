@@ -1,6 +1,6 @@
 # GenStart - AI-Powered Startup Idea Validator
 
-GenStart is an advanced AI-powered startup idea generator that leverages multiple cutting-edge AI models to help entrepreneurs, developers, and innovators discover unique business opportunities. The system uses Claude 3.5 Sonnet and GPT-3.5 Turbo to analyze market trends and generate comprehensive startup ideas with detailed business plans.
+GenStart is an advanced AI-powered startup idea Validator that leverages multiple cutting-edge AI models to help entrepreneurs, developers, and innovators discover unique business opportunities. The system uses Claude 3.5 Sonnet and GPT-3.5 Turbo to analyze market trends and generate comprehensive startup ideas with detailed business plans.
 
 ## Project Structure
 
@@ -14,7 +14,7 @@ mimo-hack/
 ## Features
 
 - **Multi-AI Model System**: Uses Claude 3.5 Sonnet and GPT-3.5 Turbo with intelligent fallback mechanisms
-- **Comprehensive Business Analysis**: Generates detailed startup ideas with problem analysis, solutions, and business models
+- **Comprehensive Business Analysis**: Validates detailed startup ideas with problem analysis, solutions, and business models
 - **Target Audience Identification**: Identifies and analyzes potential customer segments
 - **Technology Stack Recommendations**: Suggests appropriate tools and platforms
 - **Marketing Strategy Suggestions**: Provides go-to-market strategies
