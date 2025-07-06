@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import PromptForm from "./Components/PromptForm";
 import StartupIdeaCard from "./Components/IdeaCard";
 import FloatingMenu from "./Components/FloatingMenu";
-
+import Header from "./Components/Header";
 const App = () => {
   const [ideas, setIdeas] = useState([]);
 
   return (
     <div>
-      <h1 style={{ textAlign: "center", marginTop: "1rem" }}>
+      <Header/>
+      <h1 style={{ textAlign: "center", marginTop: "100px" }}>
         AI Idea Generator
       </h1>
 

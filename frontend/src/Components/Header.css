@@ -1,0 +1,90 @@
+.header-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Distributes items along the main axis */
+  align-items: center; /* Vertically aligns items in the center */
+  padding: 10px 20px; /* Increased padding for better spacing */
+  border-radius: 15px; /* Softer rounded corners */
+  /* Using a slightly darker, transparent background for sleekness */
+  background-color: rgba(30, 30, 30, 0.85); 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Softer, darker shadow */
+  position: fixed; /* Keeps it at the top */
+  width: calc(100% - 40px); /* Adjust width to account for padding/margin */
+  top: 20px; /* Slightly lower from the top */
+  left: 20px;
+  right: 20px;
+  z-index: 1000; /* Ensures it stays on top of other content */
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #e0e0e0; /* Light grey for text, to contrast with dark background */
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.site-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #a07dff; /* A vibrant color for your brand name */
+  text-shadow: 0 0 5px rgba(160, 125, 255, 0.5); /* Subtle glow */
+}
+
+.header-middle {
+  display: flex;
+  flex-direction: row;
+  gap: 25px; /* Space between the middle links */
+}
+
+.header-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Align icon and text vertically */
+  padding: 8px 15px; /* Padding inside each link item */
+  border-radius: 20px; /* Rounded pill shape for links */
+  background-color: transparent; /* Initially transparent */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+  text-decoration: none; /* Remove underline if it's an anchor tag */
+  color: inherit; /* Inherit color from parent */
+}
+
+.header-link:hover {
+  background-color: rgba(60, 60, 60, 0.7); /* Darker background on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.header-link span { /* Targeted the text inside the link div */
+  font-size: 14px; /* Slightly larger font size for readability */
+  margin-left: 8px; /* Space between icon and text */
+}
+
+.mid-images {
+  width: 18px; /* Slightly larger icon size */
+  height: 18px; /* Maintain aspect ratio */
+  /* For SVG icons, you can control color like this: */
+  filter: invert(80%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(150%); /* Makes icons lighter on dark background */
+  /* If your SVGs are not appearing correctly, you might need to adjust their fill/stroke properties directly in the SVG file or inline them */
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.cta-button {
+  background-color: #a07dff; /* Matching your site title color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: bold;
+}
+
+.cta-button:hover {
+  background-color: #8c68e0; /* Slightly darker on hover */
+  transform: translateY(-1px);
+}
