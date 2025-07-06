@@ -1,63 +1,88 @@
-// src/components/AboutAppDrawer/AboutAppDrawer.jsx
-import React from 'react';
-import './AboutAppDrawer.css';
+import React from "react";
+import "./AboutAppDrawer.css";
 
-/**
- * AboutAppDrawer Component
- * A side drawer that slides in from the left, displaying information about the application.
- *
- * Props:
- * - isOpen (boolean): Controls the visibility of the drawer.
- * - onClose (function): Callback function to close the drawer.
- */
-function AboutAppDrawer({ isOpen, onClose }) {
-  // If the drawer is not open, don't render anything to avoid unnecessary DOM elements
-  if (!isOpen) {
-    return null;
-  }
+const AboutAppDrawer = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
 
   return (
-    // The overlay darkens the background and handles clicks outside the drawer to close it
-    <div className="drawer-overlay" onClick={onClose}>
-      {/* The main drawer content area */}
-      {/* Stop propagation to prevent clicks inside the drawer from closing it */}
-      <div className="about-app-drawer" onClick={(e) => e.stopPropagation()}>
-        <div className="drawer-header">
-          <h2>About AI Idea Generator</h2>
-          {/* Close button for the drawer */}
-          <button className="close-button" onClick={onClose}>
-            &times; {/* HTML entity for a multiplication sign, commonly used for close icons */}
+    <div className="about-drawer-overlay" onClick={onClose}>
+      <div className="about-drawer" onClick={(e) => e.stopPropagation()}>
+        <div className="about-drawer-header">
+          <h2 className="about-drawer-title">About GenStart</h2>
+          <button className="about-drawer-close" onClick={onClose}>
+            ×
           </button>
         </div>
-        <div className="drawer-content">
-          <p>
-            <strong>App Name:</strong> AI Idea Generator
-          </p>
-          <p>
-            <strong>Purpose:</strong> This tool leverages artificial intelligence to spark creativity and generate innovative ideas across various niches and trends. Whether you're a content creator, entrepreneur, or just looking for inspiration, our AI can help you brainstorm and discover new concepts.
-          </p>
-          <p>
-            <strong>Key Features:</strong>
-            <ul>
-              <li>AI-powered idea generation based on user input.</li>
-              <li>Intuitive and user-friendly interface.</li>
-              <li>Quick and relevant idea suggestions.</li>
-              <li>Designed for creative professionals and hobbyists alike.</li>
+        
+        <div className="about-drawer-content">
+          <div className="about-section">
+            <h3 className="about-section-title">What is GenStart?</h3>
+            <p className="about-section-text">
+              GenStart is an AI-powered startup idea generator that helps entrepreneurs, 
+              developers, and innovators discover unique business opportunities. Using advanced 
+              AI algorithms, it analyzes market trends and generates comprehensive startup 
+              ideas with detailed business plans.
+            </p>
+          </div>
+
+          <div className="about-section">
+            <h3 className="about-section-title">How it Works</h3>
+            <p className="about-section-text">
+              Simply describe your interests, industry preferences, or specific problems 
+              you'd like to solve. Our AI will generate innovative startup ideas complete 
+              with problem analysis, solution strategies, target audience identification, 
+              and business models.
+            </p>
+          </div>
+
+          <div className="about-section">
+            <h3 className="about-section-title">Features</h3>
+            <ul className="about-features-list">
+              <li>AI-powered idea generation</li>
+              <li>Comprehensive business analysis</li>
+              <li>Target audience identification</li>
+              <li>Technology stack recommendations</li>
+              <li>Marketing strategy suggestions</li>
+              <li>Potential impact assessment</li>
             </ul>
-          </p>
-          <p>
-            <strong>Version:</strong> 1.0.0
-          </p>
-          <p>
-            <strong>Developer:</strong> Your Name / Company Name (Placeholder)
-          </p>
-          <p>
-            We hope this tool helps you unlock your next big idea!
-          </p>
+          </div>
+
+          <div className="about-section">
+            <h3 className="about-section-title">Get Started</h3>
+            <p className="about-section-text">
+              Ready to discover your next big idea? Use the form above to describe your 
+              interests or the problems you want to solve, and let our AI generate 
+              innovative startup concepts tailored just for you.
+            </p>
+          </div>
+
+          <div className="about-footer">
+            <p className="about-footer-text">
+              Built with ❤️ by the GenStart team
+            </p>
+            <div className="about-footer-links">
+              <a 
+                href="https://github.com/Mfahad159/Geni-Starter" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="about-footer-link"
+              >
+                View on GitHub
+              </a>
+              <a 
+                href="mailto:mianfahad664@gmail.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="about-footer-link"
+              >
+                Contact Us
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default AboutAppDrawer;

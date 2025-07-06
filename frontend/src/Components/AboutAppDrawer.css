@@ -1,108 +1,269 @@
-/* Overlay that covers the entire screen when the drawer is open */
-.drawer-overlay {
-  position: fixed; /* Fixed position to cover the viewport */
+.about-drawer-overlay {
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
-  z-index: 1050; /* Higher than header to overlay everything */
-  display: flex; /* Use flexbox to center or align content if needed */
-  justify-content: flex-start; /* Align drawer to the start (left) */
-  align-items: stretch; /* Stretch drawer height to fill overlay */
-  /* Ensures smooth transition for the overlay background */
-  transition: background-color 0.3s ease-in-out; 
-}
-
-/* Main drawer container */
-.about-app-drawer {
-  position: fixed; /* Fixed position relative to the viewport */
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 300px; /* Width of the drawer */
-  max-width: 80%; /* Max width for responsiveness on smaller screens */
-  background-color: #2a2a2a; /* Dark background matching your theme */
-  color: #e0e0e0; /* Light text color */
-  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5); /* Shadow for depth */
-  transform: translateX(0); /* Initial position (fully visible) */
-  transition: transform 0.3s ease-in-out; /* Smooth slide-in/out transition */
-  z-index: 1060; /* Higher than overlay */
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
-  flex-direction: column;
-  padding: 20px;
-  box-sizing: border-box; /* Include padding in the width calculation */
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  border-radius: 0 15px 15px 0; /* Rounded corners only on the right side */
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease-out;
 }
 
-/* Header section within the drawer */
-.drawer-header {
+.about-drawer {
+  background-color: rgba(30, 30, 30, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  max-width: 600px;
+  width: 90vw;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideIn 0.3s ease-out;
+  border: 1px solid rgba(160, 125, 255, 0.2);
+}
+
+.about-drawer-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+  padding: 25px 30px 20px 30px;
+  border-bottom: 1px solid rgba(160, 125, 255, 0.2);
+  position: sticky;
+  top: 0;
+  background-color: rgba(30, 30, 30, 0.95);
+  border-radius: 20px 20px 0 0;
 }
 
-.drawer-header h2 {
-  margin: 0;
+.about-drawer-title {
+  color: #a07dff;
   font-size: 24px;
-  color: #a07dff; /* Matching your brand color */
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 0 0 5px rgba(160, 125, 255, 0.3);
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* Close button styling */
-.close-button {
+.about-drawer-close {
   background: none;
   border: none;
-  font-size: 30px;
   color: #e0e0e0;
+  font-size: 28px;
   cursor: pointer;
-  padding: 5px;
-  transition: color 0.2s ease;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  font-weight: 300;
 }
 
-.close-button:hover {
-  color: #a07dff; /* Highlight on hover */
+.about-drawer-close:hover {
+  background-color: rgba(160, 125, 255, 0.2);
+  color: #a07dff;
+  transform: scale(1.1);
 }
 
-/* Content area within the drawer */
-.drawer-content {
-  flex-grow: 1; /* Allows content to take available space */
-  overflow-y: auto; /* Enable scrolling if content overflows */
+.about-drawer-content {
+  padding: 0 30px 30px 30px;
+}
+
+.about-section {
+  margin-bottom: 30px;
+}
+
+.about-section-title {
+  color: #a07dff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.about-section-text {
+  color: #e0e0e0;
   line-height: 1.6;
+  font-size: 14px;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-.drawer-content p {
-  margin-bottom: 10px;
+.about-features-list {
+  color: #e0e0e0;
+  line-height: 1.6;
+  font-size: 14px;
+  margin: 0;
+  padding-left: 20px;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-.drawer-content ul {
-  list-style-type: disc; /* Bullet points for list */
-  margin-left: 20px;
-  margin-bottom: 10px;
+.about-features-list li {
+  margin-bottom: 8px;
+  position: relative;
 }
 
-.drawer-content li {
-  margin-bottom: 5px;
+.about-features-list li::before {
+  content: "•";
+  color: #a07dff;
+  font-weight: bold;
+  position: absolute;
+  left: -15px;
 }
 
-/* Responsive adjustments */
+.about-footer {
+  margin-top: 40px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(160, 125, 255, 0.2);
+  text-align: center;
+}
+
+.about-footer-text {
+  color: #a3a3a3;
+  font-size: 13px;
+  margin-bottom: 15px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.about-footer-links {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.about-footer-link {
+  color: #a07dff;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: rgba(160, 125, 255, 0.1);
+  border: 1px solid rgba(160, 125, 255, 0.3);
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.about-footer-link:hover {
+  background-color: rgba(160, 125, 255, 0.2);
+  border-color: #a07dff;
+  transform: translateY(-1px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Scrollbar styling */
+.about-drawer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.about-drawer::-webkit-scrollbar-track {
+  background: rgba(60, 60, 60, 0.3);
+  border-radius: 4px;
+}
+
+.about-drawer::-webkit-scrollbar-thumb {
+  background: rgba(160, 125, 255, 0.3);
+  border-radius: 4px;
+}
+
+.about-drawer::-webkit-scrollbar-thumb:hover {
+  background: rgba(160, 125, 255, 0.5);
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
-  .about-app-drawer {
-    width: 250px; /* Slightly smaller width on tablets */
+  .about-drawer {
+    width: 95vw;
+    max-height: 85vh;
+    margin: 20px;
+  }
+
+  .about-drawer-header {
+    padding: 20px 25px 15px 25px;
+  }
+
+  .about-drawer-title {
+    font-size: 20px;
+  }
+
+  .about-drawer-content {
+    padding: 0 25px 25px 25px;
+  }
+
+  .about-section {
+    margin-bottom: 25px;
+  }
+
+  .about-section-title {
+    font-size: 16px;
+  }
+
+  .about-section-text,
+  .about-features-list {
+    font-size: 13px;
+  }
+
+  .about-footer-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-footer-link {
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
   }
 }
 
 @media (max-width: 480px) {
-  .about-app-drawer {
-    width: 90%; /* Larger percentage width on small mobile screens */
+  .about-drawer {
+    width: 98vw;
+    margin: 10px;
   }
-  .drawer-header h2 {
-    font-size: 20px;
+
+  .about-drawer-header {
+    padding: 15px 20px 10px 20px;
   }
-  .close-button {
-    font-size: 26px;
+
+  .about-drawer-content {
+    padding: 0 20px 20px 20px;
+  }
+
+  .about-drawer-title {
+    font-size: 18px;
+  }
+
+  .about-section-title {
+    font-size: 15px;
+  }
+
+  .about-section-text,
+  .about-features-list {
+    font-size: 12px;
   }
 }

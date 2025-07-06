@@ -3,15 +3,24 @@ import PromptForm from "./Components/PromptForm";
 import StartupIdeaCard from "./Components/IdeaCard";
 import FloatingMenu from "./Components/FloatingMenu";
 import Header from "./Components/Header";
+import AboutAppDrawer from "./Components/AboutAppDrawer";
+import Footer from "./Components/Footer";
+
 const App = () => {
   const [ideas, setIdeas] = useState([]);
   const [isAboutDrawerOpen, setIsAboutDrawerOpen] = useState(false);
-    const toggleAboutDrawer = () => {
+  
+  const toggleAboutDrawer = () => {
     setIsAboutDrawerOpen(!isAboutDrawerOpen);
   };
+
+  const handleAboutClick = () => {
+    toggleAboutDrawer();
+  };
+
   return (
-    <div>
-      <Header/>
+    <div style={{ paddingBottom: "80px" }}>
+      <Header onNavigate={handleAboutClick} />
       <h1 style={{ textAlign: "center", marginTop: "100px" }}>
         AI Idea Generator
       </h1>
@@ -35,6 +44,8 @@ const App = () => {
       ))}
       </div>
       <FloatingMenu/>
+      <AboutAppDrawer isOpen={isAboutDrawerOpen} onClose={toggleAboutDrawer} />
+      <Footer />
     </div>
   );
 };

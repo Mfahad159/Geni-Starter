@@ -10,9 +10,10 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Softer, darker shadow */
     position: fixed; /* Keeps it at the top */
     width: calc(100% - 40px); /* Adjust width to account for padding/margin */
+    max-width: 1200px; /* Maximum width for larger screens */
     top: 20px; /* Slightly lower from the top */
-    left: 20px;
-    right: 20px;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center the element */
     z-index: 1000; /* Ensures it stays on top of other content */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #e0e0e0; /* Light grey for text, to contrast with dark background */
@@ -96,9 +97,10 @@
     .header-main {
         padding: 10px 15px; /* Slightly reduced padding */
         width: calc(100% - 30px); /* Adjust width */
+        max-width: none; /* Remove max-width constraint */
         top: 15px;
-        left: 15px;
-        right: 15px;
+        left: 50%; /* Keep centered */
+        transform: translateX(-50%); /* Keep centered */
     }
 
     .site-title {
@@ -135,9 +137,10 @@
         flex-direction: row; /* Keep items in a row */
         padding: 5px 10px; /* Reduce padding */
         width: calc(100% - 20px); /* Adjust width for smaller screens */
+        max-width: none; /* Remove max-width constraint */
         top: 10px;
-        left: 10px;
-        right: 10px;
+        left: 50%; /* Keep centered */
+        transform: translateX(-50%); /* Keep centered */
         justify-content: space-between; /* Distribute items */
         border-radius: 10px;
     }
