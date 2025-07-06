@@ -22,7 +22,7 @@ const App = () => {
     <div style={{ paddingBottom: "80px" }}>
       <Header onNavigate={handleAboutClick} />
       <h1 style={{ textAlign: "center", marginTop: "100px" }}>
-        AI Idea Generator
+        AI Idea Validator
       </h1>
 
       <PromptForm onResults={(data) => setIdeas(data)} />
