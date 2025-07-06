@@ -1,0 +1,108 @@
+/* Overlay that covers the entire screen when the drawer is open */
+.drawer-overlay {
+  position: fixed; /* Fixed position to cover the viewport */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+  z-index: 1050; /* Higher than header to overlay everything */
+  display: flex; /* Use flexbox to center or align content if needed */
+  justify-content: flex-start; /* Align drawer to the start (left) */
+  align-items: stretch; /* Stretch drawer height to fill overlay */
+  /* Ensures smooth transition for the overlay background */
+  transition: background-color 0.3s ease-in-out; 
+}
+
+/* Main drawer container */
+.about-app-drawer {
+  position: fixed; /* Fixed position relative to the viewport */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px; /* Width of the drawer */
+  max-width: 80%; /* Max width for responsiveness on smaller screens */
+  background-color: #2a2a2a; /* Dark background matching your theme */
+  color: #e0e0e0; /* Light text color */
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+  transform: translateX(0); /* Initial position (fully visible) */
+  transition: transform 0.3s ease-in-out; /* Smooth slide-in/out transition */
+  z-index: 1060; /* Higher than overlay */
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in the width calculation */
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  border-radius: 0 15px 15px 0; /* Rounded corners only on the right side */
+}
+
+/* Header section within the drawer */
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+}
+
+.drawer-header h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #a07dff; /* Matching your brand color */
+}
+
+/* Close button styling */
+.close-button {
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: #e0e0e0;
+  cursor: pointer;
+  padding: 5px;
+  transition: color 0.2s ease;
+}
+
+.close-button:hover {
+  color: #a07dff; /* Highlight on hover */
+}
+
+/* Content area within the drawer */
+.drawer-content {
+  flex-grow: 1; /* Allows content to take available space */
+  overflow-y: auto; /* Enable scrolling if content overflows */
+  line-height: 1.6;
+}
+
+.drawer-content p {
+  margin-bottom: 10px;
+}
+
+.drawer-content ul {
+  list-style-type: disc; /* Bullet points for list */
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.drawer-content li {
+  margin-bottom: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-app-drawer {
+    width: 250px; /* Slightly smaller width on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-app-drawer {
+    width: 90%; /* Larger percentage width on small mobile screens */
+  }
+  .drawer-header h2 {
+    font-size: 20px;
+  }
+  .close-button {
+    font-size: 26px;
+  }
+}

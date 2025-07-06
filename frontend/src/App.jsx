@@ -5,7 +5,10 @@ import FloatingMenu from "./Components/FloatingMenu";
 import Header from "./Components/Header";
 const App = () => {
   const [ideas, setIdeas] = useState([]);
-
+  const [isAboutDrawerOpen, setIsAboutDrawerOpen] = useState(false);
+    const toggleAboutDrawer = () => {
+    setIsAboutDrawerOpen(!isAboutDrawerOpen);
+  };
   return (
     <div>
       <Header/>
